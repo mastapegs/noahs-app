@@ -13,6 +13,7 @@ export default class AppComponent extends LitElement {
         }
         .grid > * {
           border: 1px solid black;
+          text-shadow: 1px 1px black;
         }
       `,
     ]
