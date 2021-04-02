@@ -1,29 +1,39 @@
-import './style.css'
+import { LitElement, html } from 'lit-element'
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
+/* <app-component></app-component> */
 
-const randomColor = () => {
-  return `rgb(${getRandomInt(256)}, ${getRandomInt(256)}, ${getRandomInt(256)})`
-}
+// function getRandomInt(max) {
+//   return Math.floor(Math.random() * max);
+// }
 
-const renderNoahs = () => {
-  const list = []
-  for (let i = 0; i < 1_500; i++) {
-    list.push(`<div
-      style="
-        background: ${randomColor()};
-        color: ${randomColor()};
-      "
-      class="grid-item"
-    >Noah</div>`)
+// const randomColor = () => {
+//   return `rgb(${getRandomInt(256)}, ${getRandomInt(256)}, ${getRandomInt(256)})`
+// }
+
+// const getNoahStyles = () => {
+//   return styleMap({
+//     background: randomColor(),
+//     color: randomColor(),
+//   })
+// }
+
+// const renderNoahs = () => {
+//   const list = []
+//   for (let i = 0; i < 1_500; i++) {
+//     list.push(html`<div
+//       style=${getNoahStyles()}
+//       class="grid-item"
+//     >${`Noah`}</div>`)
+//   }
+//   return list
+// }
+
+export default class AppComponent extends LitElement {
+  render() {
+    return html`
+      <h1>Hello World</h1>
+    `
   }
-  return list.join('')
 }
 
-document.querySelector('#app').innerHTML = `
-  <div class="grid">
-    ${renderNoahs()}
-  </div>
-`
+customElements.define('app-component', AppComponent)
