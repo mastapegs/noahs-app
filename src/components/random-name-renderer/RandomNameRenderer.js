@@ -1,13 +1,13 @@
 import { LitElement, html, css } from 'lit-element'
 import { styleMap } from 'lit-html/directives/style-map'
 
-export default class NoahRenderer extends LitElement {
+export default class RandomNameRenderer extends LitElement {
   static get styles() {
     return [
       css`
         .grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
           place-items: center stretch;
           text-align: center;
         }
@@ -21,15 +21,15 @@ export default class NoahRenderer extends LitElement {
 
   static get properties() {
     return {
-      count: {
-        type: Number,
-      },
+      count: { type: Number },
+      names: { type: Array },
     }
   }
   
   constructor() {
     super()
     this.count = 1_500
+    this.names = ['Noah', 'Kenzie']
   }
 
   __getRandomInt(max) {
@@ -40,25 +40,29 @@ export default class NoahRenderer extends LitElement {
     return `rgb(${this.__getRandomInt(256)}, ${this.__getRandomInt(256)}, ${this.__getRandomInt(256)})`
   }
   
-  __getNoahStyles() {
+  __getNameStyles() {
     return styleMap({
       background: this.__getRandomColor(),
       color: this.__getRandomColor(),
     })
   }
   
-  __renderNoahs() {
-    const listOfNoahs = []
+  __getRandomName() {
+    return this.names[this.__getRandomInt(this.names.length)]
+  }
+  
+  __renderNames() {
+    const listOfNames = []
     for (let i = 0; i < this.count; i++) {
-      listOfNoahs.push(html`<div style=${this.__getNoahStyles()}>Noah</div>`)
+      listOfNames.push(html`<div style=${this.__getNameStyles()}>${this.__getRandomName()}</div>`)
     }
-    return listOfNoahs
+    return listOfNames
   }
 
   render() {
     return html`
       <div class="grid">
-        ${this.__renderNoahs()}
+        ${this.__renderNames()}
       </div>
     `
   }
