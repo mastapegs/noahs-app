@@ -19,6 +19,19 @@ export default class NoahRenderer extends LitElement {
     ]
   }
 
+  static get properties() {
+    return {
+      count: {
+        type: Number,
+      },
+    }
+  }
+  
+  constructor() {
+    super()
+    this.count = 1_500
+  }
+
   __getRandomInt(max) {
     return Math.floor(Math.random() * max)
   }
@@ -36,7 +49,7 @@ export default class NoahRenderer extends LitElement {
   
   __renderNoahs() {
     const listOfNoahs = []
-    for (let i = 0; i < 1_500; i++) {
+    for (let i = 0; i < this.count; i++) {
       listOfNoahs.push(html`<div style=${this.__getNoahStyles()}>Noah</div>`)
     }
     return listOfNoahs
