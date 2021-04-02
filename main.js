@@ -10,7 +10,7 @@ const randomColor = () => {
 
 const renderNoahs = () => {
   const list = []
-  for (let i = 0; i < 5_000; i++) {
+  for (let i = 0; i < 1_500; i++) {
     list.push(`<div
       style="
         background: ${randomColor()};
