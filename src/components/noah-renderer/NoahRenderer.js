@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit-element'
 import { styleMap } from 'lit-html/directives/style-map'
 
-export default class AppComponent extends LitElement {
+export default class NoahRenderer extends LitElement {
   static get styles() {
     return [
       css`
@@ -50,5 +50,3 @@ export default class AppComponent extends LitElement {
     `
   }
 }
-
-customElements.define('app-component', AppComponent)
