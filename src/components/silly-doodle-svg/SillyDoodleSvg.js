@@ -11,11 +11,6 @@ export default class SillyDoodleSvg extends LitElement {
     return html`
       <div class="container">
         <svg width="100" height="100">
-          <line x1="0" y1="0" x2="100" y2="0" />
-          <line x1="100" y1="0" x2="100" y2="100" />
-          <line x1="100" y1="100" x2="0" y2="100" />
-          <line x1="0" y1="100" x2="0" y2="0" />
-        
           <rect x="10" y="10" width="30" height="30" fill="red"/>
           <circle cx="80" cy="50" r="15" fill="blue" />
           <path d="
