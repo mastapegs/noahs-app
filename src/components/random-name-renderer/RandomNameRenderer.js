@@ -59,8 +59,16 @@ export default class RandomNameRenderer extends LitElement {
     return listOfNames
   }
 
+  __handleCountChange(e) {
+    this.count = e.target.value
+  }
+  
   render() {
     return html`
+      <div>
+        <p>Count: ${this.count}</p>
+        <input value=${this.count} @change=${this.__handleCountChange} type="number" />
+      </div>
       <div class="grid">
         ${this.__renderNames()}
       </div>
