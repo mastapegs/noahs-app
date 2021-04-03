@@ -10,6 +10,7 @@ export default class SillyDoodleSvg extends LitElement {
   render() {
     return html`
       <div class="container">
+        <p>A super silly doodle</p>
         <svg width="100" height="100">
           <rect x="10" y="10" width="30" height="30" fill="red"/>
           <circle cx="80" cy="50" r="15" fill="blue" />
