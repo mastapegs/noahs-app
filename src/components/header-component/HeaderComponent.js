@@ -1,5 +1,4 @@
 import { LitElement, html, css } from 'lit-element'
-import rainbowDragon from './rainbow-dragon.svg'
 
 export default class HeaderComponent extends LitElement {
   static get styles() {
@@ -26,11 +25,11 @@ export default class HeaderComponent extends LitElement {
   render() {
     return html`
       <header>
-        <img src=${rainbowDragon} alt="Rainbow Dragon">
+        <slot name="before"></slot>
         <h1>
           <slot name="text"></slot>
         </h1>
-        <img src=${rainbowDragon} alt="Rainbow Dragon">
+        <slot name="after"></slot>
       </header>
     `
   }
