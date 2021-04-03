@@ -7,11 +7,21 @@ export default class SillyDoodleSvg extends LitElement {
       svgStyles,
     ]
   }
+
+  __handleSvgClick(e) {
+    console.log('spin!!!')
+    e.target.classList.add('spin')
+    e.target.addEventListener("animationend", () => {
+      console.log('spin over')
+      this.classList.remove('spin')
+    })
+  }
+  
   render() {
     return html`
       <div class="container">
         <p>A super silly doodle</p>
-        <svg width="100" height="100">
+        <svg @click=${this.__handleSvgClick} width="100" height="100">
           <rect x="10" y="10" width="30" height="30" fill="red"/>
           <circle cx="65" cy="30" r="15" fill="blue" />
           <path d="
