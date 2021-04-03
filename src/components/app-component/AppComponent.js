@@ -15,7 +15,7 @@ export default class AppComponent extends LitElement {
         <img slot="after" src=${rainbowDragon} alt="Rainbow Dragon">
       </header-component>
       <silly-doodle-svg></silly-doodle-svg>
-      <random-name-renderer .names=${NAMES} count="400"></random-name-renderer>
+      <random-name-renderer .names=${NAMES} count="100"></random-name-renderer>
     `
   }
 }

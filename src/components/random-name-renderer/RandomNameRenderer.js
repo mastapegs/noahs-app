@@ -11,6 +11,10 @@ export default class RandomNameRenderer extends LitElement {
           place-items: center stretch;
           text-align: center;
         }
+        .controls {
+          padding: 1rem;
+          font-weight: bold;
+        }
         .grid > * {
           border: 1px solid black;
           text-shadow: 1px 1px black;
@@ -59,8 +63,16 @@ export default class RandomNameRenderer extends LitElement {
     return listOfNames
   }
 
+  __handleCountChange(e) {
+    this.count = e.target.value
+  }
+  
   render() {
     return html`
+      <div class="controls">
+        <p>Count: ${this.count}</p>
+        <input min="0" max="200" value=${this.count} @input=${this.__handleCountChange} type="range" />
+      </div>
       <div class="grid">
         ${this.__renderNames()}
       </div>
