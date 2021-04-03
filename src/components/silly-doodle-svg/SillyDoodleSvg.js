@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit-element'
 import svgStyles from './css.js'
 
-export default class AppComponent extends LitElement {
+export default class SillyDoodleSvg extends LitElement {
   static get styles() {
     return [
       svgStyles,
