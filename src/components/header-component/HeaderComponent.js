@@ -1,17 +1,23 @@
 import { LitElement, html, css } from 'lit-element'
+import rainbowDragon from './rainbow-dragon.svg'
 
 export default class HeaderComponent extends LitElement {
   static get styles() {
     return [
       css`
-        h1 {
-          text-align: center;
+        header {
+          display: flex;
+          justify-content: space-evenly;
+          border-bottom: 5px solid hsla(240, 50%, 20%, 1);
           background-color: hsla(0, 0%, 30%, 1);
           color: white;
+          height: 100px;
+        }
+        h1 {
+          text-align: center;
           text-shadow: 0 5px 10px black;
-          margin: 0;
+          margin: auto 0;
           padding: 1rem 0;
-          border-bottom: 5px solid hsla(240, 50%, 20%, 1)
         }
       `
     ]
@@ -19,7 +25,13 @@ export default class HeaderComponent extends LitElement {
 
   render() {
     return html`
-      <h1><slot></slot></h1>
+      <header>
+        <img src=${rainbowDragon} alt="Rainbow Dragon">
+        <h1>
+          <slot name="text"></slot>
+        </h1>
+        <img src=${rainbowDragon} alt="Rainbow Dragon">
+      </header>
     `
   }
 }
