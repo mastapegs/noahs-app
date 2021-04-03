@@ -1,20 +1,10 @@
-import { LitElement, html, css } from 'lit-element'
+import { LitElement, html } from 'lit-element'
+import svgStyles from './css.js'
 
 export default class AppComponent extends LitElement {
   static get styles() {
     return [
-      css`
-        .container {
-          display: flex;
-          justify-content: center;
-          padding: 1rem;
-          background-color: hsl(180, 50%, 80%);
-        }
-        svg {
-          stroke: black;
-          stroke-width: 5px;
-        }
-      `,
+      svgStyles,
     ]
   }
   render() {
