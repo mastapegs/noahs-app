@@ -15,6 +15,6 @@ export default css`
   }
   svg {
     stroke: white;
-    stroke-width: 5px;
+    stroke-width: 3px;
   }
 `

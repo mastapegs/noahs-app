@@ -13,7 +13,7 @@ export default class SillyDoodleSvg extends LitElement {
         <p>A super silly doodle</p>
         <svg width="100" height="100">
           <rect x="10" y="10" width="30" height="30" fill="red"/>
-          <circle cx="80" cy="50" r="15" fill="blue" />
+          <circle cx="65" cy="30" r="15" fill="blue" />
           <path d="
             M 10 90
             C 20 80 -5 40 10 50
