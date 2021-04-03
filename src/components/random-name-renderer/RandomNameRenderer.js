@@ -71,7 +71,7 @@ export default class RandomNameRenderer extends LitElement {
     return html`
       <div class="controls">
         <p>Count: ${this.count}</p>
-        <input min="0" max="200" value=${this.count} @change=${this.__handleCountChange} type="range" />
+        <input min="0" max="200" value=${this.count} @input=${this.__handleCountChange} type="range" />
       </div>
       <div class="grid">
         ${this.__renderNames()}
