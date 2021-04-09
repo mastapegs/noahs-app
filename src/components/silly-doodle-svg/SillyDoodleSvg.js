@@ -22,10 +22,8 @@ export default class SillyDoodleSvg extends LitElement {
 
   __handleSvgClick(e) {
     this.spin = true
-    console.log(this.spin)
     e.target.addEventListener("animationend", () => {
       this.spin = false
-      console.log(this.spin)
     })
   }
 
