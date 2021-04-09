@@ -39,12 +39,12 @@ export default class SillyDoodleSvg extends LitElement {
           <rect x="10" y="10" width="30" height="30" fill="red" />
           <circle cx="65" cy="30" r="15" fill="blue" />
           <path d="
-                        M 10 90
-                        C 20 80 -5 40 10 50
-                        S 20 120 30 80
-                        S 0 50 40 50
-                        S 60 100 90 90
-                      " fill="transparent" stroke-width="3" />
+                  M 10 90
+                  C 20 80 -5 40 10 50
+                  S 20 120 30 80
+                  S 0 50 40 50
+                  S 60 100 90 90
+                " fill="transparent" stroke-width="3" />
         </svg>
       </div>
     `
