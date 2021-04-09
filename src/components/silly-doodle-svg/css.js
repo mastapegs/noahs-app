@@ -17,4 +17,16 @@ export default css`
     stroke: white;
     stroke-width: 3px;
   }
+  .spin {
+    animation-name: spin;
+    animation-duration: 3s;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 `
