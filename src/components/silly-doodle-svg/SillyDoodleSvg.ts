@@ -1,26 +1,18 @@
-import { LitElement, html } from 'lit-element'
+import { LitElement, html, property } from 'lit-element'
 import { classMap } from 'lit-html/directives/class-map'
-import svgStyles from './css.js'
+import svgStyles from './css'
 
 export default class SillyDoodleSvg extends LitElement {
-  static get properties() {
-    return {
-      spin: { type: Boolean }
-    }
-  }
-
   static get styles() {
     return [
       svgStyles,
     ]
   }
 
-  constructor() {
-    super()
-    this.spin = false
-  }
+  @property({ type: Boolean }) spin = false
 
-  __handleSvgClick(e) {
+  __handleSvgClick(e: Event) {
+    if (!e?.target) return
     this.spin = true
     e.target.addEventListener("animationend", () => {
       this.spin = false
