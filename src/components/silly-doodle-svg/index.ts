@@ -1,3 +1,3 @@
-import SillyDoodleSvg from './SillyDoodleSvg.js'
+import SillyDoodleSvg from './SillyDoodleSvg'
 
 customElements.define('silly-doodle-svg', SillyDoodleSvg)

@@ -1,3 +1,3 @@
-import HeaderComponent from './HeaderComponent.js'
+import HeaderComponent from './HeaderComponent'
 
 customElements.define('header-component', HeaderComponent)

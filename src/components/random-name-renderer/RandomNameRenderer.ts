@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element'
+import { LitElement, html, css, property } from 'lit-element'
 import { styleMap } from 'lit-html/directives/style-map'
 
 export default class RandomNameRenderer extends LitElement {
@@ -23,20 +23,10 @@ export default class RandomNameRenderer extends LitElement {
     ]
   }
 
-  static get properties() {
-    return {
-      count: { type: Number },
-      names: { type: Array },
-    }
-  }
-  
-  constructor() {
-    super()
-    this.count = 1_500
-    this.names = ['Noah', 'Kenzie']
-  }
+  @property({type: Number}) count = 1_500
+  @property({type: Array}) names = ['Noah', 'Kenzie']
 
-  __getRandomInt(max) {
+  __getRandomInt(max: number) {
     return Math.floor(Math.random() * max)
   }
   
@@ -63,8 +53,10 @@ export default class RandomNameRenderer extends LitElement {
     return listOfNames
   }
 
-  __handleCountChange(e) {
-    this.count = e.target.value
+  __handleCountChange(e: Event) {
+    const target = e.target as HTMLInputElement
+    if (target.value)
+    this.count = Number(target.value)
   }
   
   render() {

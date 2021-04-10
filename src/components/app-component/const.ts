@@ -1,4 +1,4 @@
-export const NAMES = [
+export const NAMES: String[] = [
   'Noah',
   'Kenzie',
   'Mommy',

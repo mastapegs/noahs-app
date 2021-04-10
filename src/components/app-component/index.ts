@@ -1,3 +1,3 @@
-import AppComponent from './AppComponent.js'
+import AppComponent from './AppComponent'
 
 customElements.define('app-component', AppComponent)
